@@ -16,7 +16,7 @@ class RealEstateController extends Controller
 	 */
 	public function index()
 	{
-		//return Person::orderBy('id', 'asc')->get();
+		return RealEstateModel::orderBy('id', 'asc')->get();
 	}
 
 	/**
@@ -26,16 +26,23 @@ class RealEstateController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		/*$person = new Person;
+		$realestate = new RealEstateModel;
 
-        $person->name = $request->input('name');
-        $person->email = $request->input('email');
-        $person->lastName = $request->input('lastName');
-        $person->type = $request->input('type');
-        $person->pass = md5($request->input('pass'));
-        $person->save();
+        $realestate->originalCost = $request->input('originalCost');
+        $realestate->newCost = $request->input('newCost');
+        $realestate->construction = $request->input('construction');
+        $realestate->district = $request->input('district');
+        $realestate->canton = $request->input('canton');
+        $realestate->province = $request->input('province');
+        $realestate->direction = $request->input('direction');
+        $realestate->folio = $request->input('folio');
+        $realestate->lot = $request->input('lot');
+        $realestate->contactName = $request->input('contactName');
+        $realestate->contactTelephoneNumber = $request->input('contactTelephoneNumber');
+        $realestate->contactEmail = $request->input('contactEmail');
+        $realestate->save();
 
-        return $person;*/
+        return $realestate;
 	}
 
 	/**
@@ -68,7 +75,22 @@ class RealEstateController extends Controller
 	 */
 	public function update($id)
 	{
-		//
+		$realestate = RealEstateModel::find($request->input('id'));
+
+		$realestate->originalCost = $request->input('originalCost');
+        $realestate->newCost = $request->input('newCost');
+        $realestate->construction = $request->input('construction');
+        $realestate->district = $request->input('district');
+        $realestate->canton = $request->input('canton');
+        $realestate->province = $request->input('province');
+        $realestate->direction = $request->input('direction');
+        $realestate->folio = $request->input('folio');
+        $realestate->lot = $request->input('lot');
+        $realestate->contactName = $request->input('contactName');
+        $realestate->contactTelephoneNumber = $request->input('contactTelephoneNumber');
+        $realestate->contactEmail = $request->input('contactEmail');
+        $realestate->save();
+        return 0;
 	}
 
 	/**
@@ -79,6 +101,8 @@ class RealEstateController extends Controller
 	 */
 	public function destroy($id)
 	{
-		//
+		$realestate = RealEstateModel::find($id);
+        $realestate->delete();
+        return 0;
 	}
 }
