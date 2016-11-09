@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class RealEstateModel extends Model
 {
+
+	protected $table = 'realestate';
     /**
      * The attributes that are mass assignable.
      *

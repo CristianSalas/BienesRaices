@@ -23,7 +23,7 @@ angular
     'toastr'
   ])
   .config(function ($routeProvider, $authProvider) {
-    $authProvider.loginUrl='http://localhost:8080/proyectoWeb2/progra2/public/auth_login';
+    $authProvider.loginUrl='http://localhost:8080/BienesRaices/api_back/public/auth_login';
 
     $routeProvider
       .when('/', {

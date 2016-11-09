@@ -11,6 +11,12 @@
 |
 */
 
+
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use App\User;
+use App\RealEstateModel;
+
 Route::get('/', function () {
     return view('welcome');
 });

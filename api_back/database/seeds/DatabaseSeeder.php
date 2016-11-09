@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-    	/*Model::unguard();
+    	Model::unguard();
 
     	DB::table('realestate')->delete();
     	$realestates=array(
@@ -35,7 +35,8 @@ class DatabaseSeeder extends Seeder
 
         foreach ($realestates as $realestate) {
         	RealEstateModel::create($realestate);
-        }*/
+        }
+
 
         DB::table('users')->delete();
         $users=array(

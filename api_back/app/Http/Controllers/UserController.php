@@ -27,16 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $user = new User;
-
-        $user->state = $request->input('state');
-        $user->type = $request->input('type');
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->password = md5($request->input('password'));
-        $user->save();
-
-        return $user;
+        
     }
 
     /**
@@ -47,7 +38,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User;
+
+        $user->state = $request->input('state');
+        $user->type = $request->input('type');
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->password = md5($request->input('password'));
+        $user->save();
+
+        return $user;
     }
 
     /**
@@ -82,6 +82,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($request->input('id'));
+        
         $user->state = $request->input('state');
         $user->type = $request->input('type');
         $user->name = $request->input('name');
