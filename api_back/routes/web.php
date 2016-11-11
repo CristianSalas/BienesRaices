@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::group(['middleware' => 'cors'], function(){
 	Route::post('/auth_login', 'ApiAuthController@userAuth');
+	Route::get('/users', 'UserController@index');
+	Route::get('/realestate', 'RealEstateController@index');
 });
